@@ -1,0 +1,174 @@
+.aboutSection {
+  background: var(--cream);
+  padding: 112px 48px;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 64px;
+  align-items: start;
+}
+
+.aboutBody {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.aboutBody p + p { margin-top: 22px; }
+.aboutBody strong { color: var(--ink); font-weight: 500; }
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.statCard {
+  background: rgba(35,24,16,0.03);
+  border: 1px solid rgba(35,24,16,0.07);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background 0.3s, transform 0.25s var(--ease);
+  cursor: default;
+}
+
+.statCard:first-child  { border-radius: 20px 0 0 0; }
+.statCard:nth-child(2) { border-radius: 0 20px 0 0; }
+.statCard:nth-child(3) { border-radius: 0 0 0 20px; }
+.statCard:last-child   { border-radius: 0 0 20px 0; }
+.statCard:hover { background: rgba(135,168,135,0.1); transform: translateY(-2px); }
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--sage);
+  line-height: 1;
+}
+
+.statDesc {
+  font-size: 0.76rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: var(--warm-mid);
+  line-height: 1.5;
+}
+
+/* Skills */
+.skillsSection {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 112px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skillsGroups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 64px;
+}
+
+.skillGroupTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.skillGroupTitle span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(189,208,188,0.4);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.pillWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  font-size: 0.76rem;
+  font-weight: 400;
+  padding: 7px 14px;
+  border-radius: 100px;
+  transition: transform 0.2s;
+}
+.pill:hover { transform: scale(1.04); }
+
+.pill-terra {
+  background: rgba(196,142,114,0.18);
+  border: 1px solid rgba(196,142,114,0.28);
+  color: var(--terra-lt);
+}
+
+.pill-blush {
+  background: rgba(218,180,156,0.14);
+  border: 1px solid rgba(218,180,156,0.22);
+  color: var(--terra-lt);
+}
+
+.pill-mint {
+  background: rgba(189,208,188,0.12);
+  border: 1px solid rgba(135,168,135,0.24);
+  color: var(--sage-lt);
+}
+
+/* Marquee */
+.marqueeWrap {
+  overflow: hidden;
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(245,238,227,0.07);
+}
+
+.marquee {
+  display: flex;
+  gap: 32px;
+  animation: scroll 28s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.marquee span {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(245,238,227,0.35);
+  flex-shrink: 0;
+}
+
+.accent { color: var(--sage) !important; opacity: 0.5; }
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .aboutGrid { grid-template-columns: 1fr; gap: 48px; }
+  .skillsGroups { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 600px) {
+  .aboutSection { padding: 80px 24px; }
+  .skillsSection { padding: 80px 24px; }
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+}
