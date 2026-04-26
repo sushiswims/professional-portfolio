@@ -70,11 +70,11 @@ export default function Home() {
             transition={{ duration: 0.9, ease: [0.16,1,0.3,1], delay: 0.3 }}
           >
             <div className={styles.heroPhotoFrame}>
-              <img
-                src="/images/hero/1.jpg"
-                alt="Ryan Brander"
-                className={styles.heroPhoto}
-              />
+            <img
+  src={`${import.meta.env.BASE_URL}images/hero/1.jpg`}
+  alt="Ryan Brander"
+  className={styles.heroPhoto}
+/>
             </div>
           </motion.div>
         </div>
